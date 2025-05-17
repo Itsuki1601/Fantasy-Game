@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cs6ufeysmbcq6"]
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
