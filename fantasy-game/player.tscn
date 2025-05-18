@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs6ufeysmbcq6"]
+[gd_scene load_steps=7 format=3 uid="uid://cs6ufeysmbcq6"]
 
 [ext_resource type="PackedScene" uid="uid://cw2umofwri2gw" path="res://Resources/Models/Player.glb" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://55neril35g41" path="res://Resources/Scripts/PlayerMovementScript.gd" id="1_onrkg"]
@@ -9,6 +9,8 @@ radius = 0.60918
 height = 3.07529
 
 [sub_resource type="Theme" id="Theme_hqtel"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_onrkg")
@@ -49,3 +51,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
+
+[node name="CrouchCeilingDetection" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.31115, 0)
+shape = SubResource("SphereShape3D_i3pqv")
