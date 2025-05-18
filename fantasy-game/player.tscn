@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs6ufeysmbcq6"]
+[gd_scene load_steps=6 format=3 uid="uid://cs6ufeysmbcq6"]
 
 [ext_resource type="PackedScene" uid="uid://cw2umofwri2gw" path="res://Resources/Models/Player.glb" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://55neril35g41" path="res://Resources/Scripts/PlayerMovementScript.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://by0fcyaa4yy4l" path="res://Resources/Scripts/debug.gd" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.60918
 height = 3.07529
+
+[sub_resource type="Theme" id="Theme_hqtel"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_onrkg")
@@ -31,3 +34,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 453.0
+offset_bottom = 50.0
+theme = SubResource("Theme_hqtel")
+script = ExtResource("3_i3pqv")
+
+[node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
+layout_mode = 2
