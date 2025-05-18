@@ -6,12 +6,12 @@ func _process(delta: float) -> void:
 	if visible:
 		pass
 
-func add_property(title: String, value, order: int):
+func add_property(title : String, value, order : int): # This can either be called once for a static property or called every frame for a dynamic property
 	var target
-	target = $MarginContainer/VBoxContainer.find_child(title, true, false)
+	target = $MarginContainer/VBoxContainer.find_child(title, true, false) # I have no idea what true and false does here, the function should be more specific
 	if !target:
-		target = Label.new()
-		$MarginContainer/VboxContainer.add_child(target)
+		target = Label.new() # Debug lines are of type Label
+		$MarginContainer/VBoxContainer.add_child(target)
 		target.name = title
 		target.text = title + ": " + str(value)
 	elif visible:

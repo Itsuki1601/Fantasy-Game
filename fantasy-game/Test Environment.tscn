@@ -25,8 +25,3 @@ mesh = SubResource("BoxMesh_3rpwy")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 15)
 
 [node name="Player" parent="." instance=ExtResource("1_3rpwy")]
-
-[node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4, 6)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]

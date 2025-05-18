@@ -12,8 +12,11 @@ height = 3.07529
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "COLLISION_MESH")]
 script = ExtResource("1_onrkg")
+HEAD = NodePath("Head")
+CAMERA = NodePath("Head/Camera3D")
+COLLISION_MESH = NodePath("CollisionShape3D")
 
 [node name="Pivot" type="Node3D" parent="."]
 
@@ -24,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5587, 0)
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.0378e-08, 2.96051, 0.233097)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.62355e-08, 2.96051, 0.300099)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 

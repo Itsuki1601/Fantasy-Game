@@ -167,7 +167,7 @@ func handle_jumping():
 			velocity.y += jump_velocity
 
 func handle_movement(delta, input_dir):
-	var direction = input_dir.rotated(-HEAD.roation.y)
+	var direction = input_dir.rotated(-HEAD.rotation.y)
 	direction = Vector3(direction.x, 0, direction.y)
 	move_and_slide()
 
@@ -204,7 +204,7 @@ func handle_state(moving):
 			enter_normal_state()
 	
 	if crouch_enabled:
-		if Input.is_action_pressed(controls.Crouch) and state != "sprinting":
+		if Input.is_action_pressed(controls.CROUCH) and state != "sprinting":
 			if state != "crouching":
 				enter_crouch_state()
 		elif state == "crouching" and !$CrouchCeilingDetection.is_colliding():
